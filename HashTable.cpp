@@ -7,7 +7,7 @@ class HashTable{
         int size;
         int used;
         int* arr; // the table itself
-        int threshold = 0.8;
+        float threshold = 0.8;
 
         int hash(int key) {
             // This can be any hash function, but we will use the modulo operation for simplicity
@@ -29,14 +29,14 @@ class HashTable{
 
 
         void insert(int key) {
-            float load = (float) (used)/size;
+            float load =  ((float) used)/size;
 
-            if (load>=threshold){
+
+            if (load >= threshold) {
                 resizeTable();
             }
 
             int index = hash(key);
-
 
             for (int i = 0; i < size; i++){
                 int newIndex = hash(index + i*i);
