@@ -38,7 +38,7 @@ class HashTable{
 
             int index = hash(key);
 
-            for (int i = 0; i < hash(index + i*i) != index; i++){
+            for (int i = 0; hash(index + i*i) != index; i++){
                 int newIndex = hash(index + i*i);
 
                 if (arr[newIndex] == key) {
@@ -95,7 +95,7 @@ class HashTable{
                         continue;
                     }
 
-                    for (int j=1; j<size; j++){
+                    for (int j=1; j < size; j++){
                         int newIndex = hash(index + j*j);
                         if (newarr[newIndex]==-1){
                             newarr[newIndex] = key;
