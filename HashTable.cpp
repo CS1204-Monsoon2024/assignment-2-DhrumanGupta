@@ -38,7 +38,7 @@ class HashTable{
 
             int index = hash(key);
 
-            for (int i = 0; hash(index + i*i) != index; i++){
+            for (int i = 0; hash(index + i*i) != index || i == 0; i++){
                 int newIndex = hash(index + i*i);
 
                 if (arr[newIndex] == key) {
@@ -62,7 +62,7 @@ class HashTable{
 
             int originalindex = index;
 
-            for (int i = 0; hash(index + i*i) != index; i++) {
+            for (int i = 0; hash(index + i*i) != index || i == 0; i++) {
                 int newIndex = hash(index + i*i);
 
                 if (arr[newIndex] == key){
@@ -113,7 +113,7 @@ class HashTable{
         int search(int key) {
             int index = hash(key);
 
-            for (int i = 0; hash(index + i*i) != index; i++) {
+            for (int i = 0; hash(index + i*i) != index || i == 0; i++) {
                 int newIndex = hash(index + i*i);
                 if (arr[newIndex] == -1) {
                     return -1;
